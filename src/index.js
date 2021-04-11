@@ -8,6 +8,9 @@ export function init() {
 	// Imports all declared keys.
 	const keys = importInputKeys();
 	console.log("Finished loading all " + keys.size + " input key(s)!");
+
+	// Iterates over all forms.
+	injectForms(keys);
 }
 
 function importInputScheme() {
@@ -60,6 +63,26 @@ function importInputKeys() {
 
 	// Returns all the input keys declared.
 	return keys;
+}
+
+function injectForms(keys) {
+	const forms = document.getElementsByTagName("form");
+
+	// Iterates over each form.
+	for (let i = 0; i < forms.length; i++) {
+		const form = forms[i];
+
+		// Iterates over each input in this form.
+		const fields = form.getElementsByTagName("input");
+		for (let j = 0; j < fields.length; j++) {
+			const input = fields[j];
+		}
+
+		// Injects the onsubmit event to this form.
+		form.onsubmit = function(e) {
+			e.preventDefault();
+		};
+	}
 }
 
 function encrypt(key, val) {
