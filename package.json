@@ -4,7 +4,7 @@
   "description": "libsodium sealed cryptobox using tweetnacl",
   "repository": "git@github.com:yunpengn/secure-collect.git",
   "author": "neilniuyunpeng@gmail.com",
-  "license": "GNU",
+  "license": "GPL-3.0",
   "homepage": "https://github.com/yunpengn/secure-collect",
   "main": "dist/secure-collect.js",
   "scripts": {
