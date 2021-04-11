@@ -1,3 +1,5 @@
+import { JSEncrypt } from 'jsencrypt';
+
 export function init() {
 	// Imports the encryption scheme.
 	const scheme = importInputScheme();
@@ -47,18 +49,25 @@ function importInputKeys() {
 			const trimmed = element.trim();
 
 			// Finds out the key name & value.
-			if (trimmed.split("=").length !== 2) {
-				console.log("The given key '" + trimmer + "' is in invalid format");
-				return;
-			}
-			const key = trimmed.split("=")[0].trim();
-			const val = trimmed.split("=")[1].trim();
+			const pos = trimmed.indexOf('=');
+			const key = trimmed.substring(0, pos).trim();
+			const val = trimmed.substring(pos + 1).trim();
 
 			// Inserts the found key.
-			keys.set(key, val);
+			keys.set(key, atob(val));
 		});
 	}
 
 	// Returns all the input keys declared.
 	return keys;
+}
+
+function encrypt(key, val) {
+	const encrypt = new JSEncrypt();
+
+	// Sets the encryption key.
+	encrypt.setPublicKey(key);
+
+	// Returns the encryption result.
+	return encrypt.encrypt(val);
 }
