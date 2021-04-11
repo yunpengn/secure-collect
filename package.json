@@ -11,8 +11,7 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
-    "libsodium": "^0.7.9",
-    "libsodium-wrappers": "^0.7.9"
+    "jsencrypt": "^3.1.0"
   },
   "devDependencies": {
     "webpack": "^5.31.2",

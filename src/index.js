@@ -1,7 +1,29 @@
 export function init() {
+	// Imports the encryption scheme.
+	const scheme = importInputScheme();
+	console.log("Going to use '" + scheme + "' as the encryption scheme!");
+
 	// Imports all declared keys.
 	const keys = importInputKeys();
 	console.log("Finished loading all " + keys.size + " input key(s)!");
+}
+
+function importInputScheme() {
+	const tags = document.getElementsByTagName("meta");
+	for (let i = 0; i < tags.length; i++) {
+		const meta = tags[i];
+
+		// Skips if the meta name does not match.
+		if (meta.getAttribute("name") !== "input-scheme") {
+			continue;
+		}
+
+		// Gets the content.
+		return meta.getAttribute("content");
+	}
+
+	// Throws error when there is no scheme.
+	throw "No input scheme is defined";
 }
 
 function importInputKeys() {
@@ -14,7 +36,7 @@ function importInputKeys() {
 
 		// Skips if the meta name does not match.
 		if (meta.getAttribute("name") !== "input-key") {
-			return;
+			continue;
 		}
 
 		// Gets the content.
