@@ -6,8 +6,16 @@
   "author": "neilniuyunpeng@gmail.com",
   "license": "GNU",
   "homepage": "https://github.com/yunpengn/secure-collect",
+  "main": "dist/secure-collect.js",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
   "dependencies": {
     "libsodium": "^0.7.9",
     "libsodium-wrappers": "^0.7.9"
+  },
+  "devDependencies": {
+    "webpack": "^5.31.2",
+    "webpack-cli": "^4.6.0"
   }
 }
