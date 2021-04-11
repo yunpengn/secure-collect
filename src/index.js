@@ -1,7 +1,7 @@
 export function init() {
 	// Imports all declared keys.
 	const keys = importInputKeys();
-	console.log(keys);
+	console.log("Finished loading all " + keys.size + " input key(s)!");
 }
 
 function importInputKeys() {
