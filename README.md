@@ -1,6 +1,6 @@
 # Secure Collect
 
-**Secure Colect** is a JavaScript library for collecting sensitive user input in an unsecured environment.
+**Secure Collect** is a JavaScript library for collecting sensitive user input in an unsecured environment.
 
 ## How to use
 
