@@ -1,0 +1,13 @@
+{
+  "name": "secure-collect",
+  "version": "0.0.1",
+  "description": "libsodium sealed cryptobox using tweetnacl",
+  "repository": "git@github.com:yunpengn/secure-collect.git",
+  "author": "neilniuyunpeng@gmail.com",
+  "license": "GNU",
+  "homepage": "https://github.com/yunpengn/secure-collect",
+  "dependencies": {
+    "libsodium": "^0.7.9",
+    "libsodium-wrappers": "^0.7.9"
+  }
+}
