@@ -85,11 +85,21 @@ function injectForms(keys) {
                     continue;
                 }
 
-                // Gets the key used for encryption.
+                // Gets the key used for encryption and encrypts the input value.
                 const key = keys.get(input.dataset.sensitive);
+                const cipher = encrypt(key, input.value);
 
-                // Encrypts the value inside the input field.
-                input.value = encrypt(key, input.value);
+                // Inerts a new hidden field to be submitted.
+                const newInput = document.createElement("input");
+                newInput.setAttribute("type", "hidden");
+                newInput.setAttribute("name", "");
+                newInput.setAttribute("value", cipher);
+
+                // Appends the new field to the current form.
+                form.appendChild(newInput);
+
+                // Renames the current field to prevent it from being submitted.
+                input.setAttribute("name", "");
             }
         };
     }
