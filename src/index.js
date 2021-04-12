@@ -92,7 +92,7 @@ function injectForms(keys) {
                 // Inerts a new hidden field to be submitted.
                 const newInput = document.createElement("input");
                 newInput.setAttribute("type", "hidden");
-                newInput.setAttribute("name", "");
+                newInput.setAttribute("name", input.name);
                 newInput.setAttribute("value", cipher);
 
                 // Appends the new field to the current form.
