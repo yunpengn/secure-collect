@@ -20,7 +20,7 @@
                <div class="form-group">
                   <label for="cardNumber">Card Number</label>
                   <div class="input-group">
-                     <input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number" required />
+                     <input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number" data-sensitive="pan" required />
                   </div>
                </div>
             </div>
@@ -31,13 +31,13 @@
             <div class="col-xs-7 col-md-7">
                <div class="form-group">
                   <label for="cardExpiry">Expiration Date</label>
-                  <input type="tel" class="form-control" name="cardExpiry" placeholder="MM / YY" required />
+                  <input type="tel" class="form-control" name="cardExpiry" placeholder="MM / YY" data-sensitive="oth" required />
                </div>
             </div>
             <div class="col-xs-5 col-md-5 pull-right">
                <div class="form-group">
                   <label for="cardCVC">CVC / CVC2</label>
-                  <input type="tel" class="form-control" name="cardCVC" placeholder="CVC" required />
+                  <input type="tel" class="form-control" name="cardCVC" placeholder="CVC" data-sensitive="oth" required />
                </div>
             </div>
         </div>
